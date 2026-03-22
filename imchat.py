@@ -22,7 +22,7 @@ def frame_de_video(entrada, saida_caminho, intervalo=30):
         cont += 1
 
     entrada_captura.release()
-    cv2.destroyAllWindows()
+    
 
 if __name__ == "__main__":
     frame_de_video("orquidea.mp4", "frames", intervalo=1)
