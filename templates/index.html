@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrator de Fotos em Vídeo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="gradient-sphere shape-1"></div>
+        <div class="gradient-sphere shape-2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Extrator de Fotos</h1>
+            <p>Transforme seus vídeos em imagens de alta qualidade com facilidade</p>
+        </header>
+
+        <main>
+            <form id="extract-form" class="card">
+                <div class="upload-area" id="drop-zone">
+                    <input type="file" id="video-file" name="video" accept="video/*" hidden required>
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="mt-2">Clique ou arraste um vídeo aqui</p>
+                        <span class="file-name" id="file-name">Nenhum vídeo selecionado</span>
+                    </div>
+                </div>
+
+                <div class="interval-input-group mt-6">
+                    <label for="interval">Extrair a cada quantos frames?</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="interval" name="interval" value="30" min="1" required>
+                        <span class="input-suffix">frames</span>
+                    </div>
+                    <p class="hint">Recomendado: 30 a 60 para não gerar milhares de fotos.</p>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn-primary mt-6">
+                    <span class="btn-text">Extrair Fotos</span>
+                    <span class="spinner" id="spinner" style="display: none;"></span>
+                </button>
+            </form>
+            
+            <div id="error-message" class="error-msg" style="display: none;"></div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
